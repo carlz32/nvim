@@ -10,7 +10,7 @@ return {
             vim.keymap.set(
                 "n",
                 "<leader>ff",
-                ":Telescope find_files initial_mode=normal<CR>",
+                ":Telescope find_files<CR>",
                 { desc = "Telescope Find files" }
             )
             vim.keymap.set("n", "<leader>fl", ":Telescope live_grep<CR>", { desc = "Telescope Live Grep" })
@@ -23,7 +23,7 @@ return {
             vim.keymap.set(
                 "n",
                 "<leader>fh",
-                ":Telescope help_tags initial_mode=normal<CR>",
+                ":Telescope help_tags<CR>",
                 { desc = "Telescope Help Tags" }
             )
             vim.keymap.set(
