@@ -16,10 +16,10 @@ vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Centered Next'})
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Centered Pre'})
 
 -- Smart copy and paste
-vim.keymap.set({ 'n', 'v' }, 'x', '"_x', { desc = 'Cut without yank'})
-vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yank'})
-vim.keymap.set({ 'n', 'v' }, '<leader>p', '"_dp', { desc = 'Paste without yank'})
+vim.keymap.set({ 'n', 'v' }, 'x', '"_x', { desc = 'Cut without Yank'})
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without Yank'})
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"_dp', { desc = 'Paste without Yank'})
 
 -- Better Indent
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv", { desc = 'Indent Left'})
+vim.keymap.set("v", ">", ">gv", { desc = 'Indent Right'})
