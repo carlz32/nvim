@@ -1,7 +1,7 @@
 return {
     "epwalsh/obsidian.nvim",
     version = "*",
-    lazy = true,
+    event = "VeryLazy",
     ft = "markdown",
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -39,7 +39,8 @@ return {
         note_frontmatter_func = function(note)
             -- This is equivalent to the default frontmatter function.
             local out = {
-                id = note.id .. " (" .. os.date("📅%b %d 🕛%H : %M") .. ")",
+                id = note.id .. " (" .. os.date("📅%Y %b %d 🕛%H : %M") .. ")",
+                desc = "Edit by Neovim",
                 tags = note.tags,
             }
             -- `note.metadata` contains any manually added fields in the frontmatter.
