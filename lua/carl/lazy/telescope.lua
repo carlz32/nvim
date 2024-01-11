@@ -13,6 +13,12 @@ return {
                 ":Telescope find_files<CR>",
                 { desc = "Telescope Find files" }
             )
+            vim.keymap.set(
+                "n",
+                "<leader>fb",
+                ":Telescope buffers<CR>",
+                { desc = "Telescope Find Buffers" }
+            )
             vim.keymap.set("n", "<leader>fl", ":Telescope live_grep<CR>", { desc = "Telescope Live Grep" })
             vim.keymap.set(
                 "n",
@@ -44,15 +50,6 @@ return {
                 ":Telescope treesitter initial_mode=normal<CR>",
                 { desc = "Telescope Treesitter" }
             )
-            vim.keymap.set(
-                "n",
-                "<leader>fb",
-                ":Telescope file_browser path=%:p:h select_buffer=true hidden=true initial_mode=normal<CR>",
-                {
-                    noremap = true,
-                    desc = "Telescope File Browser",
-                }
-            )
         end,
     },
     {
@@ -60,13 +57,6 @@ return {
         build = "make",
         config = function()
             require("telescope").load_extension("fzf")
-        end,
-    },
-    {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-        config = function()
-            require("telescope").load_extension("file_browser")
         end,
     },
     {

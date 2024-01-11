@@ -37,6 +37,6 @@ vim.keymap.set("n", "<C-w><down>", ":resize -2<CR>", { desc = "Resize Window Dow
 
 -- Diagnotic
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnostic Open float" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostic Goto prev" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostic Goto next" })
+vim.keymap.set("n", "[e", vim.diagnostic.goto_prev, { desc = "Diagnostic Goto prev" })
+vim.keymap.set("n", "]e", vim.diagnostic.goto_next, { desc = "Diagnostic Goto next" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostic Set loclist" })
