@@ -24,8 +24,8 @@ return {
                 require("todo-comments").jump_next()
             end, { desc = "Next error/warning todo comment" })
 
-            vim.keymap.set("n", "<leader>tt", ":TodoTelescope keywords=TODO,BUG,FIX,NOTE,WARN,HACK,PERF,TEST<CR>", { desc = "Todo Telescope" })
-            vim.keymap.set("n", "<leader>to", function()
+            vim.keymap.set("n", "<leader>tl", ":TodoTelescope keywords=TODO,BUG,FIX,NOTE,WARN,HACK,PERF,TEST<CR>", { desc = "Todo Telescope" })
+            vim.keymap.set("n", "<leader>tb", function()
                 local path = vim.fn.getcwd()
                 vim.cmd('TodoTrouble cwd=' .. path)
             end, { desc = "Todo Trouble" })

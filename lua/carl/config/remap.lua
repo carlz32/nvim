@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 -- Normal
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit Insert Mode" })
 vim.keymap.set("n", "<Esc>", vim.cmd.nohl, { desc = "No Highlight" })
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Go to Explorer" })
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy, { desc = "Lazy Console" })
 
 -- Smart movements

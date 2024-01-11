@@ -33,27 +33,32 @@ return {
                 end, { expr = true, desc = "Gitsigns Prev hunk" })
 
                 -- Actions
-                map("n", "<leader>hs", gs.stage_hunk, { desc = "Gitsigns Stage hunk" })
-                map("n", "<leader>hr", gs.reset_hunk, { desc = "Gitsigns Reset hunk" })
                 map("v", "<leader>hs", function()
                     gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
                 end, { desc = "Gitsigns Stage hunk" })
+
+                map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Gitsigns Undo Stage hunk" })
+
                 map("v", "<leader>hr", function()
                     gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-                end, { desc = "Gitsigns Stage hunk" })
-                map("n", "<leader>hS", gs.stage_buffer, { desc = "Gitsigns Stage buffer" })
-                map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Gitsigns Undo Stage hunk" })
-                map("n", "<leader>hR", gs.reset_buffer, { desc = "Gitsigns Reset buffer" })
+                end, { desc = "Gitsigns Reset hunk" })
+
                 map("n", "<leader>hp", gs.preview_hunk, { desc = "Gitsigns Preview hunk" })
+
+                map("n", "<leader>hS", gs.stage_buffer, { desc = "Gitsigns Stage buffer" })
+                map("n", "<leader>hR", gs.reset_buffer, { desc = "Gitsigns Reset buffer" })
+
                 map("n", "<leader>hb", function()
                     gs.blame_line({ full = true })
                 end, { desc = "Gitsigns Blame line" })
-                map("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "Gitsigns Toggle Current Line Blame" })
+                map("n", "<leader>hB", gs.toggle_current_line_blame, { desc = "Gitsigns Toggle Current Line Blame" })
+
                 map("n", "<leader>hd", gs.diffthis, { desc = "Gitsigns Diff this" })
                 map("n", "<leader>hD", function()
                     gs.diffthis("~")
                 end, { desc = "Gitsigns Diff this" })
-                map("n", "<leader>td", gs.toggle_deleted, { desc = "Gitsigns Toggle Deleted" })
+
+                map("n", "<leader>he", gs.toggle_deleted, { desc = "Gitsigns Toggle Deleted" })
 
                 -- Text object
                 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns Select hunk" })
