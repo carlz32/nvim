@@ -1,6 +1,7 @@
 return {
     {
         "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
         config = function()
             local cmp = require("cmp")
             cmp.setup({
@@ -31,6 +32,7 @@ return {
     },
     {
         "L3MON4D3/LuaSnip",
+        event = "InsertEnter",
         version = "v2.*",
         dependencies = {
             "saadparwaiz1/cmp_luasnip",

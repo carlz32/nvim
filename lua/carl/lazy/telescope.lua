@@ -1,5 +1,8 @@
 return {
-    "nvim-tree/nvim-web-devicons",
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true,
+    },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.5",
@@ -16,7 +19,7 @@ return {
             vim.keymap.set(
                 "n",
                 "<leader>fb",
-                ":Telescope buffers<CR>",
+                ":Telescope buffers inline_mode=normal<CR>",
                 { desc = "Telescope Find Buffers" }
             )
             vim.keymap.set("n", "<leader>fl", ":Telescope live_grep<CR>", { desc = "Telescope Live Grep" })
@@ -54,6 +57,7 @@ return {
     },
     {
         "nvim-telescope/telescope-fzf-native.nvim",
+        event = "BufReadPre",
         build = "make",
         config = function()
             require("telescope").load_extension("fzf")
@@ -61,6 +65,7 @@ return {
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
+        event = "BufReadPre",
         config = function()
             require("telescope").setup({
                 extensions = {
