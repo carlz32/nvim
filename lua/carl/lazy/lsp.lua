@@ -1,8 +1,15 @@
 return {
     {
         "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
+        opts = {
+            pip = {
+                upgrade_pip = true,
+                -- Example: { "--proxy", "https://proxyserver" }
+                install_args = { "--proxy", "127.0.0.1:10809" },
+            },
+        },
+        config = function(_, opts)
+            require("mason").setup(opts)
         end,
     },
     {
@@ -13,6 +20,8 @@ return {
                     "lua_ls",
                     "rust_analyzer",
                     "tsserver",
+                    "pyright",
+                    "ruff_lsp",
                 },
             })
         end,
@@ -38,6 +47,17 @@ return {
 
             lspconfig.tsserver.setup({
                 capabilities = capabilities,
+            })
+
+            lspconfig.pyright.setup({
+                capabilities = capabilities,
+            })
+
+            lspconfig.ruff_lsp.setup({
+                on_attach = function(client, _)
+                    -- Disable hover in favor of Pyright
+                    client.server_capabilities.hoverProvider = false
+                end,
             })
 
             lspconfig.rust_analyzer.setup({
@@ -69,21 +89,6 @@ return {
                     )
                     vim.keymap.set(
                         "n",
-                        "<leader>wa",
-                        vim.lsp.buf.add_workspace_folder,
-                        { buffer = ev.buf, desc = "LSP Add Workspace Folder" }
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "<leader>wr",
-                        vim.lsp.buf.remove_workspace_folder,
-                        { buffer = ev.buf, desc = "LSP Remove Workspace Folder" }
-                    )
-                    vim.keymap.set("n", "<leader>wl", function()
-                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                    end, { buffer = ev.buf, desc = "LSP List Workspace Folders" })
-                    vim.keymap.set(
-                        "n",
                         "<leader>D",
                         vim.lsp.buf.type_definition,
                         { buffer = ev.buf, desc = "LSP Type Definition" }
@@ -98,7 +103,7 @@ return {
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "LSP References" })
                     vim.keymap.set("n", "<leader>f", function()
                         vim.lsp.buf.format({ async = true })
-                    end, { buffer = ev.buf, desc = "LSP Formate" })
+                    end, { buffer = ev.buf, desc = "LSP Format" })
                 end,
             })
         end,

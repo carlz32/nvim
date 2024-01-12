@@ -9,8 +9,6 @@ vim.keymap.set("n", "<leader>l", vim.cmd.Lazy, { desc = "Lazy Console" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Lines Down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Lines Up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Smart Join" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Centered C-u" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Centered C-d" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Centered Next" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Centered Pre" })
 
@@ -24,18 +22,9 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent Right" })
 
 -- Window
-vim.keymap.set("n", "<leader>-", ":split<CR>", { desc = "Split Window H" })
-vim.keymap.set("n", "<leader>\\", ":vsplit<CR>", { desc = "Split Window V" })
-vim.keymap.set("n", "<leader>H", "<C-w>h", { desc = "Move Window Left" })
-vim.keymap.set("n", "<leader>L", "<C-w>l", { desc = "Move Window Right" })
-vim.keymap.set("n", "<leader>J", "<C-w>j", { desc = "Move Window Down" })
-vim.keymap.set("n", "<leader>K", "<C-w>k", { desc = "Move Window Up" })
-vim.keymap.set("n", "<C-w><left>", ":vertical resize -2<CR>", { desc = "Resize Window Left" })
-vim.keymap.set("n", "<C-w><right>", ":vertical resize +2<CR>", { desc = "Resize Window Right" })
-vim.keymap.set("n", "<C-w><up>", ":resize +2<CR>", { desc = "Resize Window Up" })
-vim.keymap.set("n", "<C-w><down>", ":resize -2<CR>", { desc = "Resize Window Down" })
+vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Window Leader" })
 
--- Diagnotic
+-- Diagnostic
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnostic Open float" })
 vim.keymap.set("n", "[e", vim.diagnostic.goto_prev, { desc = "Diagnostic Goto prev" })
 vim.keymap.set("n", "]e", vim.diagnostic.goto_next, { desc = "Diagnostic Goto next" })
