@@ -12,3 +12,14 @@
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
   - [iterm2](https://iterm2.com/) **_(Macos)_**
 
+### Keymaps
+
+- `<leader>f?` for [telescope](https://github.com/nvim-telescope/telescope.nvim), [neotree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- `<leader>x?` for trouble
+- `<leader>h?` for gitsigns, fugitive
+- `<leader>b?` for obsidian
+- `<leader>t?` for todo-comments
+- `<leader>r?` for refactoring
+- `<leader>c?` for code
+- `<leader>u?` for undotree
+- `<leader>w?` for window prefix

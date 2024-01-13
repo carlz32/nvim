@@ -19,7 +19,7 @@ return {
             vim.keymap.set(
                 "n",
                 "<leader>fb",
-                ":Telescope buffers inline_mode=normal<CR>",
+                ":Telescope buffers initial_mode=normal<CR>",
                 { desc = "Telescope Find Buffers" }
             )
             vim.keymap.set("n", "<leader>fl", ":Telescope live_grep<CR>", { desc = "Telescope Live Grep" })

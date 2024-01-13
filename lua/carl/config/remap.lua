@@ -22,7 +22,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent Right" })
 
 -- Window
-vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Window Leader" })
+vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Window Prefix" })
 
 -- Diagnostic
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnostic Open float" })
