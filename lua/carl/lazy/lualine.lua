@@ -1,14 +1,20 @@
 return {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        require('lualine').setup({
+        require("lualine").setup({
             options = {
-                theme = 'catppuccin',
+                theme = "catppuccin",
             },
             extensions = {
-                'fugitive',
+                "fugitive",
+            },
+            sections = {
+                lualine_c = { "buffers" },
+            },
+            inactive_sections = {
+                lualine_c = { "buffers" },
             },
         })
     end,
