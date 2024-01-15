@@ -29,15 +29,6 @@ return {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
-            })
-        end,
-    },
-    {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        event = "BufEnter",
-        config = function()
-            require("nvim-treesitter.configs").setup({
                 textobjects = {
                     select = {
                         enable = true,
@@ -88,5 +79,10 @@ return {
                 },
             })
         end,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        event = "BufEnter",
     },
 }

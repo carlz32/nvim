@@ -54,7 +54,7 @@ return {
                 map("n", "<leader>hB", gs.toggle_current_line_blame, { desc = "Gitsigns Toggle Current Line Blame" })
 
                 map("n", "<leader>hd", function()
-                    gs.diffthis("~", { split = "botright"})
+                    gs.diffthis("~", { split = "botright" })
                 end, { desc = "Gitsigns Diff this" })
 
                 map("n", "<leader>he", gs.toggle_deleted, { desc = "Gitsigns Toggle Deleted" })
