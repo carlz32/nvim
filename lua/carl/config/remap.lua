@@ -11,6 +11,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Lines Up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Smart Join" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Centered Next" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Centered Pre" })
+vim.keymap.set("n", "gw", "*N", { desc = "Search Word" })
 
 -- Smart copy and paste
 vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Cut without Yank" })
