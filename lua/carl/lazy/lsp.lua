@@ -101,7 +101,7 @@ return {
                         { buffer = ev.buf, desc = "LSP Code Action" }
                     )
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "LSP References" })
-                    vim.keymap.set("n", "<leader>f", function()
+                    vim.keymap.set("n", "<leader>s", function()
                         vim.lsp.buf.format({ async = true })
                     end, { buffer = ev.buf, desc = "LSP Format" })
                 end,
