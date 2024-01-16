@@ -9,6 +9,7 @@ return {
 
         vim.keymap.set("n", "<leader>a", function()
             harpoon:list():append()
+            print(vim.fn.expand("%:.") .. " added to Harpoon")
         end, { desc = "Harpoon Append" })
         vim.keymap.set("n", "<C-e>", function()
             harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -38,5 +39,8 @@ return {
                 end, { buffer = cx.bufnr })
             end,
         })
+
+        local extensions = require("harpoon.extensions")
+        harpoon:extend(extensions.builtins.navigate_with_number())
     end,
 }

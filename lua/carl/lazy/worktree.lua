@@ -13,7 +13,7 @@ return {
             "n",
             "<leader>hT",
             ":Telescope git_worktree create_git_worktree initial_mode=normal<CR>",
-            { desc = "Telescope Creaste Git Worktree" }
+            { desc = "Telescope Create Git Worktree" }
         )
         local Worktree = require("git-worktree")
 
@@ -42,7 +42,7 @@ return {
                         .. metadata.upstream
                 )
             elseif op == Worktree.Operations.Delete then
-                print("Switched from " .. metadata.prev_path .. " to " .. metadata.path)
+                print("Delete worktree in" .. metadata.path)
             end
         end)
     end,
