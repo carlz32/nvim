@@ -4,7 +4,6 @@ return {
         opts = {
             pip = {
                 upgrade_pip = true,
-                -- Example: { "--proxy", "https://proxyserver" }
                 install_args = { "--proxy", "127.0.0.1:10809" },
             },
         },
@@ -54,6 +53,7 @@ return {
             })
 
             lspconfig.ruff_lsp.setup({
+                capabilities = capabilities,
                 on_attach = function(client, _)
                     -- Disable hover in favor of Pyright
                     client.server_capabilities.hoverProvider = false
@@ -96,7 +96,7 @@ return {
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = ev.buf, desc = "LSP Rename" })
                     vim.keymap.set(
                         { "n", "v" },
-                        "<leader>ca",
+                        "<leader>c",
                         vim.lsp.buf.code_action,
                         { buffer = ev.buf, desc = "LSP Code Action" }
                     )
