@@ -42,7 +42,7 @@ return {
                         },
                         selection_modes = {
                             ["@parameter.outer"] = "v", -- charwise
-                            ["@function.outer"] = "V",  -- linewise
+                            ["@function.outer"] = "V", -- linewise
                             ["@class.outer"] = "<c-v>", -- blockwise
                         },
                         include_surrounding_whitespace = true,
@@ -78,6 +78,9 @@ return {
                     },
                 },
             })
+            require("nvim-treesitter.install").command_extra_args = {
+                curl = { "--proxy", "127.0.0.1:10809" },
+            }
         end,
     },
     {
