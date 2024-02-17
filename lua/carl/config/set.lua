@@ -28,7 +28,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff = 999
-vim.opt.smoothscroll = true
+-- vim.opt.smoothscroll = true
 
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
