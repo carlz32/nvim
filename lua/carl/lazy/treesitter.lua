@@ -78,9 +78,6 @@ return {
                     },
                 },
             })
-            require("nvim-treesitter.install").command_extra_args = {
-                curl = { "--proxy", "127.0.0.1:10809" },
-            }
         end,
     },
     {

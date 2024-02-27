@@ -20,7 +20,6 @@ return {
                     "rust_analyzer",
                     "tsserver",
                     "pyright",
-                    "ruff_lsp",
                 },
             })
         end,
@@ -52,13 +51,6 @@ return {
                 capabilities = capabilities,
             })
 
-            lspconfig.ruff_lsp.setup({
-                capabilities = capabilities,
-                on_attach = function(client, _)
-                    -- Disable hover in favor of Pyright
-                    client.server_capabilities.hoverProvider = false
-                end,
-            })
 
             lspconfig.rust_analyzer.setup({
                 capabilities = capabilities,
