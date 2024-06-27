@@ -2,9 +2,16 @@ return {
     {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
+        dependencies = {
+            "onsails/lspkind.nvim",
+        },
         config = function()
-            local cmp = require("cmp")
-            cmp.setup({
+            local lspkind = require "lspkind"
+            lspkind.init {}
+
+            local luasnip = require "luasnip"
+            local cmp = require "cmp"
+            cmp.setup {
                 snippet = {
                     expand = function(args)
                         require("luasnip").lsp_expand(args.body)
@@ -14,13 +21,43 @@ return {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
                 },
-                mapping = cmp.mapping.preset.insert({
+                mapping = cmp.mapping.preset.insert {
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
-                    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-                }),
+                    ["<CR>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            if luasnip.expandable() then
+                                luasnip.expand()
+                            else
+                                cmp.confirm {
+                                    select = true,
+                                }
+                            end
+                        else
+                            fallback()
+                        end
+                    end),
+                    ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                        elseif luasnip.locally_jumpable(1) then
+                            luasnip.jump(1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.locally_jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                },
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
@@ -29,7 +66,7 @@ return {
                 }, {
                     { name = "buffer" },
                 }),
-            })
+            }
         end,
     },
     {
@@ -44,8 +81,8 @@ return {
             require("luasnip.loaders.from_vscode").lazy_load()
         end,
     },
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
 }

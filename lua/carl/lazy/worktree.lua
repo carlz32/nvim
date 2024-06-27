@@ -2,7 +2,7 @@ return {
     "ThePrimeagen/git-worktree.nvim",
     event = "BufEnter",
     config = function()
-        require("telescope").load_extension("git_worktree")
+        require("telescope").load_extension "git_worktree"
         vim.keymap.set(
             "n",
             "<leader>ht",
@@ -15,7 +15,7 @@ return {
             ":Telescope git_worktree create_git_worktree initial_mode=normal<CR>",
             { desc = "Telescope Create Git Worktree" }
         )
-        local Worktree = require("git-worktree")
+        local Worktree = require "git-worktree"
 
         -- op = Operations.Switch, Operations.Create, Operations.Delete
         -- metadata = table of useful values (structure dependent on op)

@@ -40,7 +40,7 @@ return {
         note_frontmatter_func = function(note)
             -- This is equivalent to the default frontmatter function.
             local out = {
-                id = note.id .. " (" .. os.date("📅%Y %b %d 🕛%H : %M") .. ")",
+                id = note.id .. " (" .. os.date "📅%Y %b %d 🕛%H : %M" .. ")",
                 desc = "Edit by Neovim",
                 tags = note.tags,
             }
@@ -55,7 +55,7 @@ return {
         end,
         follow_url_func = function(url)
             -- Open the URL in the default web browser.
-            vim.fn.jobstart({ "wsl-open", url })
+            vim.fn.jobstart { "wsl-open", url }
         end,
     },
     config = function(_, opts)

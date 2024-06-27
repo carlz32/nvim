@@ -10,12 +10,7 @@ return {
             "nvim-lua/plenary.nvim",
         },
         config = function()
-            vim.keymap.set(
-                "n",
-                "<leader>ff",
-                ":Telescope find_files<CR>",
-                { desc = "Telescope Find files" }
-            )
+            vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Telescope Find files" })
             vim.keymap.set(
                 "n",
                 "<leader>fb",
@@ -29,12 +24,7 @@ return {
                 ":Telescope git_status initial_mode=normal<CR>",
                 { desc = "Telescope Git Status" }
             )
-            vim.keymap.set(
-                "n",
-                "<leader>fh",
-                ":Telescope help_tags<CR>",
-                { desc = "Telescope Help Tags" }
-            )
+            vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Telescope Help Tags" })
             vim.keymap.set(
                 "n",
                 "<leader>fr",
@@ -60,21 +50,21 @@ return {
         event = "VeryLazy",
         build = "make",
         config = function()
-            require("telescope").load_extension("fzf")
+            require("telescope").load_extension "fzf"
         end,
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
         event = "VeryLazy",
         config = function()
-            require("telescope").setup({
+            require("telescope").setup {
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({}),
+                        require("telescope.themes").get_dropdown {},
                     },
                 },
-            })
-            require("telescope").load_extension("ui-select")
+            }
+            require("telescope").load_extension "ui-select"
         end,
     },
 }

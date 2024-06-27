@@ -4,8 +4,8 @@ return {
         event = "VeryLazy",
         build = ":TSUpdate",
         config = function()
-            local configs = require("nvim-treesitter.configs")
-            configs.setup({
+            local configs = require "nvim-treesitter.configs"
+            configs.setup {
                 ensure_installed = {
                     "lua",
                     "vim",
@@ -77,7 +77,7 @@ return {
                         },
                     },
                 },
-            })
+            }
         end,
     },
     {

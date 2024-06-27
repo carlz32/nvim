@@ -1,1 +1,1 @@
-require("carl.config")
+require "carl.config"

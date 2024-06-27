@@ -4,10 +4,10 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
-            require("catppuccin").setup({
+            require("catppuccin").setup {
                 transparent_background = true,
                 custom_highlights = function(colors)
-                    local u = require("catppuccin.utils.colors")
+                    local u = require "catppuccin.utils.colors"
                     return {
                         CursorColumn = {
                             bg = u.vary_color(
@@ -49,15 +49,15 @@ return {
                     lsp_trouble = false,
                     which_key = false,
                 },
-            })
-            vim.cmd.colorscheme("catppuccin")
+            }
+            vim.cmd.colorscheme "catppuccin"
         end,
     },
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("todo-comments").setup({})
+            require("todo-comments").setup {}
             vim.keymap.set("n", "[t", function()
                 require("todo-comments").jump_prev()
             end, { desc = "Previous todo comment" })

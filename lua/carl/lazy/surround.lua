@@ -4,7 +4,7 @@ return {
         event = "InsertEnter",
         version = "*",
         config = function()
-            require("nvim-surround").setup({})
+            require("nvim-surround").setup {}
         end,
     },
 }

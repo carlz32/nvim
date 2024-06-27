@@ -7,10 +7,10 @@
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
 - a terminal that support true color and _undercurl_:
-  - [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & Macos)_**
-  - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
-  - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
-  - [iterm2](https://iterm2.com/) **_(Macos)_**
+  - [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & MacOS)_**
+  - [wezterm](https://github.com/wez/wezterm) **_(Linux, MacOS & Windows)_**
+  - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, MacOS & Windows)_**
+  - [iterm2](https://iterm2.com/) **_(MacOS)_**
 
 ### Personal Keymaps
 
@@ -20,6 +20,6 @@
 - `<leader>b?` for [obsidian](https://github.com/epwalsh/obsidian.nvim)
 - `<leader>t?` for [todo-comments](https://github.com/folke/todo-comments.nvim)
 - `<leader>r?` for [refactoring](https://github.com/ThePrimeagen/refactoring.nvim)
-- `<leader>c?` for code tings
+- `<leader>c?` for code things
 - `<leader>u?` for [undotree](https://github.com/mbbill/undotree)
 - `<leader>w?` for window prefix

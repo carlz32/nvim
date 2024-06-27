@@ -3,7 +3,7 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        require("lualine").setup({
+        require("lualine").setup {
             options = {
                 theme = "catppuccin",
             },
@@ -16,6 +16,6 @@ return {
             inactive_sections = {
                 lualine_c = { "buffers" },
             },
-        })
+        }
     end,
 }

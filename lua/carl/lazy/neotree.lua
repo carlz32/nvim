@@ -13,7 +13,7 @@ return {
         vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
         vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
-        require("neo-tree").setup({
+        require("neo-tree").setup {
             window = {
                 position = "right",
                 mappings = {
@@ -26,7 +26,7 @@ return {
                     ["<C-p>"] = "move_cursor_up",
                 },
             },
-        })
+        }
         vim.keymap.set("n", "<leader>fe", ":Neotree toggle<CR>", { desc = "Neotree Explorer" })
     end,
 }

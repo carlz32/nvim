@@ -4,12 +4,12 @@ return {
     event = "BufEnter",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-        local harpoon = require("harpoon")
+        local harpoon = require "harpoon"
         harpoon:setup()
 
         vim.keymap.set("n", "<leader>a", function()
             harpoon:list():append()
-            print(vim.fn.expand("%:.") .. " added to Harpoon")
+            print(vim.fn.expand "%:." .. " added to Harpoon")
         end, { desc = "Harpoon Append" })
         vim.keymap.set("n", "<C-e>", function()
             harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -28,19 +28,19 @@ return {
             harpoon:list():select(4)
         end, { desc = "Harpoon Select 4" })
 
-        harpoon:extend({
+        harpoon:extend {
             UI_CREATE = function(cx)
                 vim.keymap.set("n", "<C-v>", function()
-                    harpoon.ui:select_menu_item({ vsplit = true })
+                    harpoon.ui:select_menu_item { vsplit = true }
                 end, { buffer = cx.bufnr })
 
                 vim.keymap.set("n", "<C-x>", function()
-                    harpoon.ui:select_menu_item({ split = true })
+                    harpoon.ui:select_menu_item { split = true }
                 end, { buffer = cx.bufnr })
             end,
-        })
+        }
 
-        local extensions = require("harpoon.extensions")
+        local extensions = require "harpoon.extensions"
         harpoon:extend(extensions.builtins.navigate_with_number())
     end,
 }
