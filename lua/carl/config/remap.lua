@@ -14,8 +14,8 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Centered Pre" })
 vim.keymap.set("n", "gw", "*N", { desc = "Search Word" })
 
 -- Buffer
-vim.keymap.set("n", "<tab>", ":bnext<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<S-tab>", ":bprevious<CR>", { desc = "Previous Buffer" })
+vim.keymap.set("n", "<tab>", "<CMD>bnext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<S-tab>", "<CMD>bprevous<CR>", { desc = "Previous Buffer" })
 
 -- Smart copy and paste
 vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Cut without Yank" })

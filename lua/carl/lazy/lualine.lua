@@ -11,10 +11,22 @@ return {
                 "fugitive",
             },
             sections = {
-                lualine_c = { "buffers" },
-            },
-            inactive_sections = {
-                lualine_c = { "buffers" },
+                lualine_b = {
+                    "branch"
+                },
+                lualine_c = { {
+                    "buffers",
+                    symbols = {
+                        modified = ' ●',
+                        alternate_file = '󰑆 ',
+                        directory = ' ',
+                    },
+                } },
+                lualine_x = {
+                    "searchcount",
+                    "diagnostics",
+                    "diff",
+                },
             },
         }
     end,
