@@ -10,37 +10,37 @@ return {
             "nvim-lua/plenary.nvim",
         },
         config = function()
-            vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Telescope Find files" })
+            vim.keymap.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Telescope Find files" })
             vim.keymap.set(
                 "n",
                 "<leader>fb",
-                ":Telescope buffers initial_mode=normal<CR>",
+                "<CMD>Telescope buffers initial_mode=normal<CR>",
                 { desc = "Telescope Find Buffers" }
             )
-            vim.keymap.set("n", "<leader>fl", ":Telescope live_grep<CR>", { desc = "Telescope Live Grep" })
+            vim.keymap.set("n", "<leader>fl", "<CMD>Telescope live_grep<CR>", { desc = "Telescope Live Grep" })
             vim.keymap.set(
                 "n",
                 "<leader>fs",
-                ":Telescope git_status initial_mode=normal<CR>",
+                "<CMD>Telescope git_status initial_mode=normal<CR>",
                 { desc = "Telescope Git Status" }
             )
-            vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Telescope Help Tags" })
+            vim.keymap.set("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", { desc = "Telescope Help Tags" })
             vim.keymap.set(
                 "n",
                 "<leader>fr",
-                ":Telescope resume initial_mode=normal<CR>",
+                "<CMD>Telescope resume initial_mode=normal<CR>",
                 { desc = "Telescope Resume" }
             )
             vim.keymap.set(
                 "n",
                 "<leader>fd",
-                ":Telescope diagnostics initial_mode=normal<CR>",
+                "<CMD>Telescope diagnostics initial_mode=normal<CR>",
                 { desc = "Telescope Diagnostics" }
             )
             vim.keymap.set(
                 "n",
                 "<leader>ft",
-                ":Telescope treesitter initial_mode=normal<CR>",
+                "<CMD>Telescope treesitter initial_mode=normal<CR>",
                 { desc = "Telescope Treesitter" }
             )
         end,

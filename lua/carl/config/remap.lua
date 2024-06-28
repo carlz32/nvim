@@ -6,8 +6,8 @@ vim.keymap.set("n", "<Esc>", vim.cmd.nohl, { desc = "No Highlight" })
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy, { desc = "Lazy Console" })
 
 -- Smart movements
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Lines Down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Lines Up" })
+vim.keymap.set("v", "J", "<CMD>m '>+1<CR>gv=gv", { desc = "Move Lines Down" })
+vim.keymap.set("v", "K", "<CMD>m '<-2<CR>gv=gv", { desc = "Move Lines Up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Smart Join" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Centered Next" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Centered Pre" })
@@ -15,7 +15,7 @@ vim.keymap.set("n", "gw", "*N", { desc = "Search Word" })
 
 -- Buffer
 vim.keymap.set("n", "<tab>", "<CMD>bnext<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<S-tab>", "<CMD>bprevous<CR>", { desc = "Previous Buffer" })
+vim.keymap.set("n", "<S-tab>", "<CMD>bprevious<CR>", { desc = "Previous Buffer" })
 
 -- Smart copy and paste
 vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Cut without Yank" })

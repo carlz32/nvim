@@ -6,13 +6,13 @@ return {
         vim.keymap.set(
             "n",
             "<leader>ht",
-            ":Telescope git_worktree git_worktrees initial_mode=normal<CR>",
+            "<CMD>Telescope git_worktree git_worktrees initial_mode=normal<CR>",
             { desc = "Telescope Git Worktrees" }
         )
         vim.keymap.set(
             "n",
             "<leader>hT",
-            ":Telescope git_worktree create_git_worktree initial_mode=normal<CR>",
+            "<CMD>Telescope git_worktree create_git_worktree initial_mode=normal<CR>",
             { desc = "Telescope Create Git Worktree" }
         )
         local Worktree = require "git-worktree"

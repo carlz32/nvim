@@ -69,7 +69,7 @@ return {
             vim.keymap.set(
                 "n",
                 "<leader>tl",
-                ":TodoTelescope keywords=TODO,BUG,FIX,NOTE,WARN,HACK,PERF,TEST<CR>",
+                "<CMD>TodoTelescope keywords=TODO,BUG,FIX,NOTE,WARN,HACK,PERF,TEST<CR>",
                 { desc = "Todo Telescope" }
             )
             vim.keymap.set("n", "<leader>tb", function()

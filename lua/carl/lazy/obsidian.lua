@@ -60,11 +60,11 @@ return {
     },
     config = function(_, opts)
         require("obsidian").setup(opts)
-        vim.keymap.set("n", "gl", ":ObsidianFollowLink<CR>", { desc = "Obsidian Follow Link" })
-        vim.keymap.set("n", "<leader>bn", ":ObsidianNew<CR>", { desc = "Obsidian New Note" })
-        vim.keymap.set("n", "<leader>bq", ":ObsidianQuickSwitch<CR>", { desc = "Obsidian Quick Switch" })
-        vim.keymap.set("n", "<leader>bs", ":ObsidianSearch<CR>", { desc = "Obsidian Search" })
-        vim.keymap.set("n", "<leader>bl", ":ObsidianLink<CR>", { desc = "Obsidian Link Exist Note" })
-        vim.keymap.set("n", "<leader>be", ":ObsidianLinkNew<CR>", { desc = "Obsidian Link New Note" })
+        vim.keymap.set("n", "gl", "<CMD>ObsidianFollowLink<CR>", { desc = "Obsidian Follow Link" })
+        vim.keymap.set("n", "<leader>bn", "<CMD>ObsidianNew<CR>", { desc = "Obsidian New Note" })
+        vim.keymap.set("n", "<leader>bq", "<CMD>ObsidianQuickSwitch<CR>", { desc = "Obsidian Quick Switch" })
+        vim.keymap.set("n", "<leader>bs", "<CMD>ObsidianSearch<CR>", { desc = "Obsidian Search" })
+        vim.keymap.set("n", "<leader>bl", "<CMD>ObsidianLink<CR>", { desc = "Obsidian Link Exist Note" })
+        vim.keymap.set("n", "<leader>be", "<CMD>ObsidianLinkNew<CR>", { desc = "Obsidian Link New Note" })
     end,
 }

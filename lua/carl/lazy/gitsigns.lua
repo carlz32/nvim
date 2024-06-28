@@ -60,7 +60,7 @@ return {
                 map("n", "<leader>he", gs.toggle_deleted, { desc = "Gitsigns Toggle Deleted" })
 
                 -- Text object
-                map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns Select hunk" })
+                map({ "o", "x" }, "ih", "<CMD><C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns Select hunk" })
             end,
         }
     end,
