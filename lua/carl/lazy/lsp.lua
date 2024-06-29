@@ -4,7 +4,6 @@ return {
         opts = {
             pip = {
                 upgrade_pip = true,
-                install_args = { "--proxy", "127.0.0.1:10809" },
             },
         },
         config = function(_, opts)
@@ -20,27 +19,52 @@ return {
                     "rust_analyzer",
                     "tsserver",
                     "pyright",
+                    "cssls",
                 },
             }
         end,
     },
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "b0o/schemastore.nvim",
+        },
         config = function()
             local lspconfig = require "lspconfig"
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.lua_ls.setup {
-                capabilities = capabilities,
+            lspconfig.jsonls.setup {
                 settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = {
-                                "vim",
+                    json = {
+                        schemas = require('schemastore').json.schemas {
+                            ignore = {
+                                '.eslintrc',
+                                'package.json',
                             },
                         },
+                        validate = { enable = true },
                     },
                 },
+            }
+
+            lspconfig.yamlls.setup {
+                settings = {
+                    yaml = {
+                        schemaStore = {
+                            enable = false,
+                            url = "",
+                        },
+                        schemas = require('schemastore').yaml.schemas(),
+                    },
+                },
+            }
+
+            lspconfig.cssls.setup {
+                capabilities = capabilities,
+            }
+
+            lspconfig.lua_ls.setup {
+                capabilities = capabilities,
             }
 
             lspconfig.tsserver.setup {

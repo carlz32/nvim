@@ -63,9 +63,24 @@ return {
                     { name = "luasnip" },
                     { name = "crates" },
                     { name = "path" },
+                    { name = "lazydev" },
                 }, {
                     { name = "buffer" },
                 }),
+                formatting = {
+                    expandable_indicator = true,
+                    fields = {
+                        cmp.ItemField.Kind,
+                        cmp.ItemField.Abbr,
+                        cmp.ItemField.Menu,
+                    },
+                    format = lspkind.cmp_format({
+                        mode = 'symbol',
+                        maxwidth = 50,
+                        ellipsis_char = '...',
+                        show_labelDetails = true,
+                    })
+                }
             }
         end,
     },
@@ -73,6 +88,7 @@ return {
         "L3MON4D3/LuaSnip",
         event = "InsertEnter",
         version = "v2.*",
+        build = "make install_jsregexp",
         dependencies = {
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
