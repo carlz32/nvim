@@ -11,22 +11,12 @@ return {
                 "fugitive",
             },
             sections = {
-                lualine_b = {
-                    "branch"
-                },
-                lualine_c = { {
-                    "buffers",
-                    symbols = {
-                        modified = ' ●',
-                        alternate_file = '# ',
-                        directory = ' ',
-                    },
-                } },
-                lualine_x = {
-                    "searchcount",
-                    "diagnostics",
-                    "diff",
-                },
+                lualine_a = { 'mode' },
+                lualine_b = { 'branch', 'diff', 'diagnostics' },
+                lualine_c = { 'filename' },
+                lualine_x = { 'encoding', 'fileformat', 'filetype' },
+                lualine_y = { 'progress' },
+                lualine_z = { 'location' }
             },
         }
     end,

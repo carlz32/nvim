@@ -29,6 +29,16 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent Right" })
 -- Window
 vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Window Prefix" })
 
+-- Terminal
+vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
+vim.keymap.set("n", "<leader>tt", function ()
+    vim.cmd.new()
+    vim.cmd.wincmd "J"
+    vim.api.nvim_win_set_height(0, 12)
+    vim.wo.winfixheight = true
+    vim.cmd.term()
+end, { desc = "Open Terminal Mode" })
+
 -- Diagnostic
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnostic Open float" })
 vim.keymap.set("n", "[e", vim.diagnostic.goto_prev, { desc = "Diagnostic Goto prev" })
