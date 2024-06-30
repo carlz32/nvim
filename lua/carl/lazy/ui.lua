@@ -85,4 +85,11 @@ return {
             require("mini.pairs").setup()
         end
     },
+    {
+        {
+            "j-hui/fidget.nvim",
+            opts = {
+            },
+        }
+    },
 }

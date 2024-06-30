@@ -66,7 +66,7 @@ return {
                     { name = "luasnip" },
                     { name = "crates" },
                     { name = "path" },
-                    { name = "lazydev" },
+                    { name = "lazydev", group_index = 0, },
                 }, {
                     { name = "buffer" },
                 }),
