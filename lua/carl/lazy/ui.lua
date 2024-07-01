@@ -69,13 +69,10 @@ return {
             vim.keymap.set(
                 "n",
                 "<leader>tl",
-                "<CMD>TodoTelescope keywords=TODO,BUG,FIX,NOTE,WARN,HACK,PERF,TEST<CR>",
+                "<CMD>TodoTelescope keywords=TODO,BUG,FIX,NOTE,WARN,HACK,PERF,TEST initial_mode=normal<CR>",
                 { desc = "Todo Telescope" }
             )
-            vim.keymap.set("n", "<leader>tb", function()
-                local path = vim.fn.getcwd()
-                vim.cmd("TodoTrouble cwd=" .. path)
-            end, { desc = "Todo Trouble" })
+            vim.keymap.set("n", "<leader>tb", "<CMD>Trouble todo focus=true<CR>", { desc = "Todo Trouble" })
         end,
     },
     {

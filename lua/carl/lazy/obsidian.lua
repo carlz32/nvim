@@ -1,7 +1,6 @@
 return {
     "epwalsh/obsidian.nvim",
     version = "*",
-    enabled = false,
     event = "VeryLazy",
     ft = "markdown",
     dependencies = {
@@ -11,15 +10,23 @@ return {
         workspaces = {
             {
                 name = "personal",
-                path = "/mnt/c/Users/KaelZhu/OneDrive/Documents/Kael's Second Brain",
-                overrides = {
-                    notes_subdir = "Rust",
-                },
+                path = "~/Documents/Notes/vaults/Dev",
+                overrides = {},
             },
             {
-                name = "work",
-                path = "/mnt/c/Users/KaelZhu/OneDrive/Documents/Easy Schedule Dev Diary",
-            },
+                name = "no-vault",
+                path = function ()
+                    return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+                end,
+                overrides = {
+                    notes_subdir = vim.NIL,
+                    new_notes_location = "current_dir",
+                    templates = {
+                        folder = vim.NIL,
+                    },
+                    disable_frontmatter = true,
+                }
+            }
         },
         note_id_func = function(title)
             -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
@@ -55,7 +62,7 @@ return {
         end,
         follow_url_func = function(url)
             -- Open the URL in the default web browser.
-            vim.fn.jobstart { "wsl-open", url }
+            vim.fn.jobstart { "xdg-open", url }
         end,
     },
     config = function(_, opts)
