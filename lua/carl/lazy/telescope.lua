@@ -13,14 +13,14 @@ return {
             vim.keymap.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Telescope Find files" })
             vim.keymap.set(
                 "n",
-                "<leader>fb",
+                "<leader><space>",
                 "<CMD>Telescope buffers initial_mode=normal<CR>",
                 { desc = "Telescope Find Buffers" }
             )
             vim.keymap.set("n", "<leader>fl", "<CMD>Telescope live_grep<CR>", { desc = "Telescope Live Grep" })
             vim.keymap.set(
                 "n",
-                "<leader>fs",
+                "<leader>fg",
                 "<CMD>Telescope git_status initial_mode=normal<CR>",
                 { desc = "Telescope Git Status" }
             )
@@ -42,6 +42,18 @@ return {
                 "<leader>ft",
                 "<CMD>Telescope treesitter initial_mode=normal<CR>",
                 { desc = "Telescope Treesitter" }
+            )
+            vim.keymap.set(
+                "n",
+                "gs",
+                "<CMD>Telescope lsp_document_symbols<CR>",
+                { desc = "Telescope Document symbols" }
+            )
+            vim.keymap.set(
+                "n",
+                "gS",
+                "<CMD>Telescope lsp_workspace_symbols<CR>",
+                { desc = "Telescope Workspace symbols" }
             )
         end,
     },

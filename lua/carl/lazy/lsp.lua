@@ -115,7 +115,7 @@ return {
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = ev.buf, desc = "LSP Rename" })
                     vim.keymap.set(
                         { "n", "v" },
-                        "<leader>c",
+                        "<leader>ca",
                         vim.lsp.buf.code_action,
                         { buffer = ev.buf, desc = "LSP Code Action" }
                     )

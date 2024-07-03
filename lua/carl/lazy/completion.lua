@@ -6,29 +6,25 @@ return {
             "onsails/lspkind.nvim",
         },
         config = function()
-            local lspkind = require "lspkind"
-            lspkind.init {}
-
             local luasnip = require "luasnip"
             local cmp = require "cmp"
+            local lspkind = require "lspkind"
             cmp.setup {
                 snippet = {
                     expand = function(args)
                         require("luasnip").lsp_expand(args.body)
                     end,
                 },
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
-                },
+                window = {},
                 mapping = cmp.mapping.preset.insert {
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                    ["<C-Space>"] = cmp.mapping.complete(),
+                    ["<C-i>"] = cmp.mapping.complete(),
                     ["<C-y>"] = cmp.mapping.confirm {
                         select = true,
+                        behavior = cmp.ConfirmBehavior.Insert,
                     },
-                    ["<C-e>"] = cmp.mapping.abort(),
+                    ["<C-c>"] = cmp.mapping.abort(),
                     ["<CR>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             if luasnip.expandable() then
@@ -66,30 +62,34 @@ return {
                     { name = "luasnip" },
                     { name = "crates" },
                     { name = "path" },
-                    { name = "lazydev", group_index = 0, },
+                    { name = "lazydev", group_index = 0 },
                 }, {
-                    { name = "buffer" },
+                    { name = "buffer", keyword_length = 5 },
                 }),
+                ---@diagnostic disable-next-line: missing-fields
                 formatting = {
-                    expandable_indicator = true,
-                    fields = {
-                        cmp.ItemField.Kind,
-                        cmp.ItemField.Abbr,
-                        cmp.ItemField.Menu,
+                    format = lspkind.cmp_format {
+                        mode = "symbol_text",
+                        ellipsis_char = "...",
+                        menu = {
+                            buffer = "[Buf]",
+                            nvim_lsp = "[LSP]",
+                            luasnip = "[Snip]",
+                            path = "[Path]",
+                            crates = "[Crate]",
+                            lazydev = "[Dev]",
+                        },
                     },
-                    format = lspkind.cmp_format({
-                        mode = 'symbol',
-                        maxwidth = 50,
-                        ellipsis_char = '...',
-                        show_labelDetails = true,
-                    })
+                },
+                experimental = {
+                    ghost_text = true,
+                    native_menu = false,
                 }
             }
         end,
     },
     {
         "L3MON4D3/LuaSnip",
-        event = "InsertEnter",
         version = "v2.*",
         build = "make install_jsregexp",
         dependencies = {
@@ -97,6 +97,8 @@ return {
             "rafamadriz/friendly-snippets",
         },
         config = function()
+            require("luasnip").filetype_extend("typescript", { "javascript" })
+            require("luasnip").filetype_extend("javascript", { "html" })
             require("luasnip.loaders.from_vscode").lazy_load()
         end,
     },

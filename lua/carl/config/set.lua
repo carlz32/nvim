@@ -4,6 +4,7 @@ vim.opt.wrap = false
 vim.opt.virtualedit = "block"
 vim.opt.termguicolors = true
 vim.opt.inccommand = "split"
+vim.opt.winbar = "%=%m %f"
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.fileformat = "unix"
