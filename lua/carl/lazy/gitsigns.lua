@@ -43,7 +43,7 @@ return {
                     gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
                 end, { desc = "Gitsigns Reset hunk" })
 
-                map("n", "<leader>hp", gs.preview_hunk, { desc = "Gitsigns Preview hunk" })
+                map("n", "<leader>hh", gs.preview_hunk, { desc = "Gitsigns Preview hunk" })
 
                 map("n", "<leader>hS", gs.stage_buffer, { desc = "Gitsigns Stage buffer" })
                 map("n", "<leader>hR", gs.reset_buffer, { desc = "Gitsigns Reset buffer" })
