@@ -20,10 +20,6 @@ return {
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-i>"] = cmp.mapping.complete(),
-                    ["<C-y>"] = cmp.mapping.confirm {
-                        select = true,
-                        behavior = cmp.ConfirmBehavior.Insert,
-                    },
                     ["<C-c>"] = cmp.mapping.abort(),
                     ["<CR>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
