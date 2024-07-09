@@ -33,12 +33,19 @@ return {
         end,
     },
     {
+        "vhyrro/luarocks.nvim",
+        priority = 1001, -- this plugin needs to run before anything else
+        opts = {
+            rocks = { "magick" },
+        },
+    },
+    {
         "3rd/image.nvim",
         config = function()
             ---@diagnostic disable-next-line: missing-fields
-            require("image").setup({
+            require("image").setup {
                 tmux_show_only_in_active_window = true,
-            })
-        end
-    }
+            }
+        end,
+    },
 }
