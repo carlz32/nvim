@@ -8,6 +8,7 @@ vim.opt.winbar = "%=%m %f"
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.fileformat = "unix"
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 vim.opt.confirm = true
 vim.opt.cursorline = true
