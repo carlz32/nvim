@@ -1,8 +1,8 @@
 return {
-    'stevearc/conform.nvim',
+    "stevearc/conform.nvim",
     opts = {},
     config = function()
-        require("conform").setup({
+        require("conform").setup {
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "isort", "black" },
@@ -10,8 +10,8 @@ return {
             },
             format_on_save = {
                 timeout_ms = 500,
-                lsp_format = "fallback"
-            }
-        })
-    end
+                lsp_format = "fallback",
+            },
+        }
+    end,
 }

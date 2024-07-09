@@ -8,8 +8,8 @@ return {
         "marilari88/neotest-vitest",
     },
     config = function()
+        ---@diagnostic disable-next-line: missing-fields
         require("neotest").setup {
-
             adapters = {
                 require "neotest-vitest" {
                     filter_dir = function(name)
