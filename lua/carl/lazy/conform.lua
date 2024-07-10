@@ -7,6 +7,7 @@ return {
                 lua = { "stylua" },
                 python = { "isort", "black" },
                 javascript = { { "prettierd", "prettier" } },
+                markdown = { { "prettierd", "prettier" } },
             },
             format_on_save = {
                 timeout_ms = 500,

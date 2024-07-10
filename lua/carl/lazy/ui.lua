@@ -54,17 +54,14 @@ return {
         end,
     },
     {
-        'echasnovski/mini.pairs',
-        version = '*',
+        "echasnovski/mini.pairs",
+        version = "*",
         config = function()
             require("mini.pairs").setup()
-        end
+        end,
     },
     {
-        {
-            "j-hui/fidget.nvim",
-            opts = {
-            },
-        }
+        "j-hui/fidget.nvim",
+        opts = {},
     },
 }
