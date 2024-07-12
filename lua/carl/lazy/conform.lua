@@ -7,6 +7,7 @@ return {
                 lua = { "stylua" },
                 python = { "isort", "black" },
                 javascript = { { "prettierd", "prettier" } },
+                html = { { "prettierd", "prettier" } },
                 markdown = { { "prettierd", "prettier" } },
             },
             format_on_save = {
@@ -14,5 +15,6 @@ return {
                 lsp_format = "fallback",
             },
         }
+        vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
 }

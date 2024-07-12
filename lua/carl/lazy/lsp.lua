@@ -36,10 +36,10 @@ return {
             lspconfig.jsonls.setup {
                 settings = {
                     json = {
-                        schemas = require('schemastore').json.schemas {
+                        schemas = require("schemastore").json.schemas {
                             ignore = {
-                                '.eslintrc',
-                                'package.json',
+                                ".eslintrc",
+                                "package.json",
                             },
                         },
                         validate = { enable = true },
@@ -54,7 +54,7 @@ return {
                             enable = false,
                             url = "",
                         },
-                        schemas = require('schemastore').yaml.schemas(),
+                        schemas = require("schemastore").yaml.schemas(),
                     },
                 },
             }
@@ -121,7 +121,7 @@ return {
                     )
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "LSP References" })
                     vim.keymap.set("n", "<leader>s", function()
-                        vim.lsp.buf.format { async = true }
+                        require("conform").format { async = true, lsp_format = "fallback" }
                     end, { buffer = ev.buf, desc = "LSP Format" })
                 end,
             })
