@@ -20,6 +20,7 @@ return {
                     "tsserver",
                     "pyright",
                     "cssls",
+                    "markdown_oxide",
                 },
             }
         end,
@@ -60,6 +61,10 @@ return {
             }
 
             lspconfig.cssls.setup {
+                capabilities = capabilities,
+            }
+
+            lspconfig.markdown_oxide.setup {
                 capabilities = capabilities,
             }
 
