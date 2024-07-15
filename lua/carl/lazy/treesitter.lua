@@ -39,6 +39,8 @@ return {
                         keymaps = {
                             ["af"] = "@function.outer",
                             ["if"] = "@function.inner",
+                            ["P"] = "@parameter.outer",
+                            ["p"] = "@parameter.inner",
                             ["ac"] = "@class.outer",
                             ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
                             ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
@@ -49,6 +51,15 @@ return {
                             ["@class.outer"] = "<c-v>", -- blockwise
                         },
                         include_surrounding_whitespace = true,
+                    },
+                    swap = {
+                        enable = true,
+                        swap_next = {
+                            ["<leader>m"] = "@parameter.inner",
+                        },
+                        swap_previous = {
+                            ["<leader>M"] = "@parameter.inner",
+                        },
                     },
                     move = {
                         enable = true,
