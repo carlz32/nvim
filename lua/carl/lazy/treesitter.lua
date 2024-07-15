@@ -39,14 +39,15 @@ return {
                         keymaps = {
                             ["af"] = "@function.outer",
                             ["if"] = "@function.inner",
-                            ["P"] = "@parameter.outer",
-                            ["p"] = "@parameter.inner",
+                            ["am"] = "@parameter.outer",
+                            ["im"] = "@parameter.inner",
                             ["ac"] = "@class.outer",
                             ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
                             ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
                         },
                         selection_modes = {
                             ["@parameter.outer"] = "v", -- charwise
+                            ["@parameter.inner"] = "v", -- charwise
                             ["@function.outer"] = "V", -- linewise
                             ["@class.outer"] = "<c-v>", -- blockwise
                         },

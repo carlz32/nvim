@@ -3,7 +3,11 @@ return {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("todo-comments").setup {}
+            require("todo-comments").setup {
+                highlight = {
+                    comments_only = false,
+                },
+            }
             vim.keymap.set("n", "[t", function()
                 require("todo-comments").jump_prev()
             end, { desc = "Previous todo comment" })
@@ -22,10 +26,10 @@ return {
         end,
     },
     {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
         config = function()
             ---@diagnostic disable-next-line: missing-fields
             require("Comment").setup {}
-        end
-    }
+        end,
+    },
 }
