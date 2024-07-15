@@ -59,6 +59,14 @@ return {
                     { name = "crates" },
                     { name = "path" },
                     { name = "lazydev", group_index = 0 },
+                    {
+                        name = "nvim_lsp",
+                        option = {
+                            markdown_oxide = {
+                                keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
+                            },
+                        },
+                    },
                 }, {
                     { name = "buffer", keyword_length = 5 },
                 }),
@@ -80,7 +88,7 @@ return {
                 experimental = {
                     ghost_text = true,
                     native_menu = false,
-                }
+                },
             }
         end,
     },

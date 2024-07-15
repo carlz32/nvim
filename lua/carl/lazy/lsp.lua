@@ -65,7 +65,14 @@ return {
             }
 
             lspconfig.markdown_oxide.setup {
-                capabilities = capabilities,
+                capabilities = {
+                    unpack(capabilities),
+                    workspace = {
+                        didChangeWatchedFiles = {
+                            dynamicRegistration = true,
+                        },
+                    },
+                },
             }
 
             lspconfig.html.setup {
@@ -126,7 +133,7 @@ return {
                     )
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "LSP References" })
                     vim.keymap.set("n", "<leader>s", function()
-                        require("conform").format { async = true, lsp_format = "fallback" }
+                        vim.lsp.buf.format { async = true }
                     end, { buffer = ev.buf, desc = "LSP Format" })
                 end,
             })
