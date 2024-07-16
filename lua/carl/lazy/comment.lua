@@ -7,6 +7,9 @@ return {
                 highlight = {
                     comments_only = false,
                 },
+                search = {
+                    pattern = [[(\b(KEYWORDS):|^ *\- \[ \] .+)]],
+                },
             }
             vim.keymap.set("n", "[t", function()
                 require("todo-comments").jump_prev()
