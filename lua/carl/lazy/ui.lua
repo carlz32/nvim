@@ -57,7 +57,13 @@ return {
         "echasnovski/mini.pairs",
         version = "*",
         config = function()
-            require("mini.pairs").setup {}
+            require("mini.pairs").setup {
+                mappings = {
+                    ["("] = { action = "open", pair = "()", neigh_pattern = "[^\\][ \n]" },
+                    ["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\][ \n]" },
+                    ["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\][ \n]" },
+                },
+            }
         end,
     },
     {
