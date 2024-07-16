@@ -1,7 +1,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
-vim.opt.virtualedit = "block"
+vim.opt.virtualedit = "all"
 vim.opt.termguicolors = true
 vim.opt.inccommand = "split"
 vim.opt.winbar = "%=%m %f"
