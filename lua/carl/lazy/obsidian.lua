@@ -10,12 +10,14 @@ return {
         workspaces = {
             {
                 name = "personal",
-                path = "~/Documents/Notes/vaults/Dev",
-                overrides = {},
+                path = "~/Documents/Notes/Vaults/Carl's Notes",
+                overrides = {
+                    notes_subdir = "00 Zettelkasten",
+                },
             },
             {
                 name = "no-vault",
-                path = function ()
+                path = function()
                     return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
                 end,
                 overrides = {
@@ -25,30 +27,46 @@ return {
                         folder = vim.NIL,
                     },
                     disable_frontmatter = true,
-                }
-            }
+                },
+            },
+        },
+        templates = {
+            folder = "Templates",
+            date_format = "%Y-%m-%d",
+            time_format = "%H:%M",
+            -- A map for custom variables, the key should be the variable and the value a function
+            substitutions = {},
+        },
+        new_notes_location = "notes_subdir",
+        image_name_func = function()
+            -- Prefix image names with timestamp.
+            return string.format("%s-", os.time())
+        end,
+        attachments = {
+            img_folder = "Assets/imgs",
         },
         note_id_func = function(title)
             -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
             -- In this case a note with the title 'My new note' will be given an ID that looks
             -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
-            local prefix = ""
+            local suffix = ""
             if title ~= nil then
                 -- If title is given, transform it into valid file name.
-                prefix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+                suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
             else
                 -- If title is nil, just add 4 random uppercase letters to the suffix.
                 for _ = 1, 4 do
-                    prefix = prefix .. string.char(math.random(65, 90))
+                    suffix = suffix .. string.char(math.random(65, 90))
                 end
             end
-            return prefix
+            return tostring(os.date "%y%m%d%H%M") .. "-" .. suffix
         end,
         note_frontmatter_func = function(note)
             -- This is equivalent to the default frontmatter function.
             local out = {
-                id = note.id .. " (" .. os.date "📅%Y %b %d 🕛%H : %M" .. ")",
+                id = note.id,
                 desc = "Edit by Neovim",
+                date = os.date "📅%Y %m %d 🕛%H : %M : %S",
                 tags = note.tags,
             }
             -- `note.metadata` contains any manually added fields in the frontmatter.

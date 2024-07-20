@@ -50,3 +50,4 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 6
 vim.opt.foldminlines = 5
+vim.opt.conceallevel = 1
