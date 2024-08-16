@@ -13,7 +13,7 @@ return {
             vim.keymap.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Telescope Find files" })
             vim.keymap.set(
                 "n",
-                "<leader><space>",
+                "<leader>e",
                 "<CMD>Telescope buffers initial_mode=normal<CR>",
                 { desc = "Telescope Find Buffers" }
             )
