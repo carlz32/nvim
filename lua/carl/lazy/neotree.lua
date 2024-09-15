@@ -7,7 +7,6 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
-            "3rd/image.nvim",
         },
         config = function()
             vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
@@ -30,22 +29,6 @@ return {
                 },
             }
             vim.keymap.set("n", "<leader>fe", "<CMD>Neotree toggle<CR>", { desc = "Neotree Explorer" })
-        end,
-    },
-    {
-        "vhyrro/luarocks.nvim",
-        priority = 1001, -- this plugin needs to run before anything else
-        opts = {
-            rocks = { "magick" },
-        },
-    },
-    {
-        "3rd/image.nvim",
-        config = function()
-            ---@diagnostic disable-next-line: missing-fields
-            require("image").setup {
-                tmux_show_only_in_active_window = true,
-            }
         end,
     },
 }

@@ -17,7 +17,7 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "rust_analyzer",
-                    "tsserver",
+                    "ts_ls",
                     "pyright",
                     "cssls",
                     "markdown_oxide",
@@ -83,7 +83,7 @@ return {
                 capabilities = capabilities,
             }
 
-            lspconfig.tsserver.setup {
+            lspconfig.ts_ls.setup {
                 capabilities = capabilities,
             }
 
