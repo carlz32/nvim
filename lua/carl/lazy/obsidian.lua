@@ -10,7 +10,7 @@ return {
         workspaces = {
             {
                 name = "personal",
-                path = "/Users/carlz/Library/CloudStorage/OneDrive-Personal/Documents/Vaults/Carl's Notes",
+                path = "~/OneDrive/Documents/Vaults/Carl's Notes",
                 overrides = {
                     notes_subdir = "00 Zettelkasten",
                 },
