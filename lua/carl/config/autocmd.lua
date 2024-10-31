@@ -12,6 +12,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "markdown" },
+    callback = function()
+        vim.wo.conceallevel = 2
+    end,
+})
+
 vim.api.nvim_create_autocmd("TermOpen", {
     group = vim.api.nvim_create_augroup("custom-term-open", {}),
     callback = function()
