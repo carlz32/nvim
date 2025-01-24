@@ -67,22 +67,22 @@ return {
     --         end, { expr = true, silent = true })
     --     end,
     -- },
-    {
-        "github/copilot.vim",
-        event = "BufEnter",
-        config = function()
-            -- accept the next word of the current suggestion
-            vim.keymap.set("i", "<C-l>", "<Plug>(copilot-accept-word)")
-            -- accept the next line of the current suggestion
-            vim.keymap.set("i", "<C-k>", "<Plug>(copilot-accept-line)")
-            -- dismiss the current suggestion
-            vim.keymap.set("i", "<C-]>", "<Plug>(copilot-dismiss)")
-            -- cycle to the next suggestion
-            vim.keymap.set("i", "<C-;>", "<Plug>(copilot-next)")
-            -- cycle to the previous suggestion
-            vim.keymap.set("i", "<C-,>", "<Plug>(copilot-previous)")
-            -- request a new suggestion
-            vim.keymap.set("i", "<C-\\>", "<Plug>(copilot-suggest)")
-        end,
-    },
+    -- {
+    --     "github/copilot.vim",
+    --     event = "BufEnter",
+    --     config = function()
+    --         -- accept the next word of the current suggestion
+    --         vim.keymap.set("i", "<C-l>", "<Plug>(copilot-accept-word)")
+    --         -- accept the next line of the current suggestion
+    --         vim.keymap.set("i", "<C-k>", "<Plug>(copilot-accept-line)")
+    --         -- dismiss the current suggestion
+    --         vim.keymap.set("i", "<C-]>", "<Plug>(copilot-dismiss)")
+    --         -- cycle to the next suggestion
+    --         vim.keymap.set("i", "<C-;>", "<Plug>(copilot-next)")
+    --         -- cycle to the previous suggestion
+    --         vim.keymap.set("i", "<C-,>", "<Plug>(copilot-previous)")
+    --         -- request a new suggestion
+    --         vim.keymap.set("i", "<C-\\>", "<Plug>(copilot-suggest)")
+    --     end,
+    -- },
 }
