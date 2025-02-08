@@ -1,4 +1,6 @@
-### Requirements
+# Descriptions
+
+## Requirements
 
 - Neovim
 - Git
@@ -12,9 +14,10 @@
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, MacOS & Windows)_**
   - [iterm2](https://iterm2.com/) **_(MacOS)_**
 
-### Personal Keymaps
+## Personal Keymaps
 
-- `<leader>f?` for [telescope](https://github.com/nvim-telescope/telescope.nvim), [neotree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- `<leader>f?`
+  - [telescope](https://github.com/nvim-telescope/telescope.nvim), [neotree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - `<leader>x?` for [trouble](https://github.com/folke/trouble.nvim)
 - `<leader>h?` for [gitsigns](https://github.com/lewis6991/gitsigns.nvim), [fugitive](https://github.com/tpope/vim-fugitive)
 - `<leader>b?` for [obsidian](https://github.com/epwalsh/obsidian.nvim)
