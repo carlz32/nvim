@@ -7,6 +7,7 @@ vim.g.mapleader = " "
 -- Normal
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit Insert Mode" })
 vim.keymap.set("n", "<Esc>", vim.cmd.nohl, { desc = "No Highlight" })
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
 
 -- Smart copy and paste
 vim.keymap.set({ "n", "v" }, "x", "\"_x", { desc = "Cut without Yank" })
