@@ -5,9 +5,14 @@ return {
         "echasnovski/mini.icons",
     },
     opts = {
+        code = {
+            sign = true,
+            width = "block",
+            right_pad = 1,
+        },
         heading = {
             sign = true,
-            icons = { "󰼏 ", "󰎨 " },
+            icons = { "󰼏 ", "󰎨 ", "󰼑 ", "󰎲 ", "󰼓 ", "󰎴 " },
         },
         checkbox = {
             enabled = true,
