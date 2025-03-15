@@ -6,3 +6,4 @@ vim.opt.inccommand = "split"
 vim.opt.winbar = "%=%m %f"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.virtualedit = "all"
